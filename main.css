@@ -4,10 +4,11 @@ body {
 
 #display {
     text-align: center;
+    font-size: 50px;
 }
 
 #coffee {
-    width: 50px;
+    width: 60px;
     display: inline;
 }
 
@@ -15,17 +16,14 @@ body {
     color: white;
 }
 
-.pr
-
 #brewing {
-    height: 600px;
+    height: auto;
     padding: 10px;
 }
 
 #info {
-    height: 500px;
+    height: auto;
     padding: 60px 10px 10px 10px;
-    padding-bottom: 60px;
 }
 
 #brand {
@@ -33,7 +31,7 @@ body {
 }
 
 #timer {
-    height: 600px;
+    height: auto;
     padding: 10px;
 }
 
@@ -43,13 +41,31 @@ body {
     top: -56px;
 }
 
-#progressbar
-{
+.progress {
     margin-top: 20px;
-    height: 40px;
+    display: none;
+    height: 60px;
 }
 
-.progress-bar
-{
+.progress-bar {
     width: 0%;
+    height: 60px;
+}
+
+#inputForm {
+    font-size: 20px;
+    margin: auto;
+}
+
+#timerDisplay {
+    font-size: 70px;
+    display: block;
+}
+
+#screen {
+    display: none;
+}
+
+.card-body {
+    color: white;
 }

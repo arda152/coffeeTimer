@@ -8,7 +8,7 @@
     <!-- Latest compiled and minified CSS -->
 </head>
 
-<body>
+<body class="bg-1">
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-0">
         <span id="brand" class="navbar-brand ">
             coffeeTimer
@@ -43,7 +43,7 @@
         <a id="timeranchor" class="anchor"></a>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 card">
+                <div class="col-sm-6 card bg-3">
                     <div class="card-body">
                         <h4 class="card-title">How To Use Brew Timer</h4>
                         1. Enter how much ground coffee you want to brew. <br> 2. Boil some water and get ready to brew.
@@ -51,21 +51,19 @@
                     </div>
                 </div>
                 <div class="col-sm-6 form-group text-center" id="inputForm">
-                    I want to brew
-                    <input class="form-control" id="coffee" type="text" placeholder=""> grams of ground coffee.
-                    <input type="button" class="btn btn-primary" id="submitButton" value="Start Brewing">
+                    <input class="form-control" id="coffee" type="text" placeholder=""> grams of coffee beans
+                    <input type="button" class="btn btn-primary bg-4" id="submitButton" value="Start Brewing">
+                    <div id="timerDisplay">
+                    </div>
                 </div>
             </div>
+                <div id="progressbar" class="progress">
+                    <div class="progress-bar" id="progressbartag"></div>
+                </div>
+                <div id="screen" class="text-center">
+                    <h2> Aim for <span id="display"></span> grams of water.</h2>
+                </div>
         </div>
-        <form>
-            <div id="progressbar" class="progress">
-                <div class="progress-bar" id="progressbartag"></div>
-            </div>
-            <div id="display">
-            </div>
-            <div id="timerDisplay">
-            </div>
-        </form>
     </div>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

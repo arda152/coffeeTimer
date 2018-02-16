@@ -5,8 +5,11 @@ $(function () {
             return false;
         }
         let totalWater = Number($("#coffee").val() * (1000 / 60));
+        $("#screen").show();
+        $("#timerDisplay").html("00:00");
         $("#display").html(parseInt($("#coffee").val() * 2));
         $("#progressbartag").html("Bloom");
+        $(".progress").show();
         $(".progress-bar").css("width", "12%");
         totalWater -= parseInt($("#coffee").val() * 2);
         let increment = totalWater / 120;
@@ -27,7 +30,7 @@ $(function () {
         // The pour begins 30 seconds later
         setTimeout(function () {
             let counter = setInterval(function () {
-                $("#progressbartag").html("Brew");
+                $("#progressbartag").html("Pour");
                 $("#display").html(parseInt($("#coffee").val() * 2 + increment * i));
                 // Bloom is 12% of total water
                 // Map the value of i (0, 120) to percentage (12, 100)
