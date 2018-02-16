@@ -14,8 +14,41 @@ body
     display: inline;
 }
 
-#inputForm
+.nav-link
 {
-    margin-top: 10px;
+    color: white;
 }
+
+
+
+#brewing
+{
+    height: 600px;
+    padding: 10px;
+}
+
+#info
+{
+    height: 500px;
+    padding: 60px 10px 10px 10px;
+    padding-bottom: 60px;
+}
+
+#brand
+{
+    color: white;
+}
+
+#timer
+{
+    height: 600px;
+    padding: 10px;
+}
+.anchor
+{
+    display: block;
+    position: relative;
+    top: -56px;
+}
+
 
