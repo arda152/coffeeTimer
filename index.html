@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="stylesheet" href="colors.css" type="text/css">
-        <!-- Latest compiled and minified CSS -->
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-sm fixed-top bg-0">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="colors.css" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-0">
+        <span id="brand" class="navbar-brand ">
+            coffeeTimer
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNav">
             <ul class="navbar-nav">
-                <li id="brand" class="navbar-brand ">
-                    coffeeTimer
-                </li>
                 <li class="nav-item">
                     <a href="#info" class="nav-link">About Coffee</a>
                 </li>
@@ -22,36 +28,50 @@
                     <a href="#timeranchor" class="nav-link">Brew Timer</a>
                 </li>
             </ul>
-        </nav>
-        
-        <!--Some information about coffee plant, production and roasting-->
-        <div id="info" class="bg-3">
-            lorem ipsum dolor sit amet
         </div>
-        <!--Information about brewing the coffee-->
-        <div id="brewing" class="bg-2">
-            <a class="anchor" id="brewinganchor"></a>
-            lorem ipsum brew sit amet    
+    </nav>
+
+    <!--Some information about coffee plant, production and roasting-->
+    <div id="info" class="bg-3">
+        lorem ipsum dolor sit amet
+    </div>
+    <!--Information about brewing the coffee-->
+    <div id="brewing" class="bg-2">
+        <a class="anchor" id="brewinganchor"></a> lorem ipsum brew sit amet
+    </div>
+    <div id="timer" class="bg-1">
+        <a id="timeranchor" class="anchor"></a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 card">
+                    <div class="card-body">
+                        <h4 class="card-title">How To Use Brew Timer</h4>
+                        1. Enter how much ground coffee you want to brew. <br> 2. Boil some water and get ready to brew.
+                        <br> 3. Press "Start Brewing" and pour the bloom <br> 4. Try to match the weight on your digital scale with the number on the screen. <br> 5. Enjoy!
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group text-center" id="inputForm">
+                    I want to brew
+                    <input class="form-control" id="coffee" type="text" placeholder=""> grams of ground coffee.
+                    <input type="button" class="btn btn-primary" id="submitButton" value="Start Brewing">
+                </div>
+            </div>
         </div>
-        <div id="timer" class="bg-1">
-            <a id="timeranchor" class="anchor"></a>
-            <form>
-            <div class="form-group text-center" id="inputForm">
-                I want to brew
-                <input class="form-control" id="coffee" type="text" placeholder="">
-                grams of ground coffee.
-                <input type="button" class="btn btn-primary" id="submitButton" value="Submit">
+        <form>
+            <div id="progressbar" class="progress">
+                <div class="progress-bar" id="progressbartag"></div>
             </div>
             <div id="display">
             </div>
             <div id="timerDisplay">
             </div>
-            </form>
-        </div>
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="script.js"></script>
-    </body>
+        </form>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
 </html>

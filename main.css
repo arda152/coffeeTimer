@@ -1,54 +1,55 @@
-body
-{
+body {
     color: black;
 }
 
-#display
-{
+#display {
     text-align: center;
 }
 
-#coffee
-{
+#coffee {
     width: 50px;
     display: inline;
 }
 
-.nav-link
-{
+.nav-link {
     color: white;
 }
 
+.pr
 
-
-#brewing
-{
+#brewing {
     height: 600px;
     padding: 10px;
 }
 
-#info
-{
+#info {
     height: 500px;
     padding: 60px 10px 10px 10px;
     padding-bottom: 60px;
 }
 
-#brand
-{
+#brand {
     color: white;
 }
 
-#timer
-{
+#timer {
     height: 600px;
     padding: 10px;
 }
-.anchor
-{
+
+.anchor {
     display: block;
     position: relative;
     top: -56px;
 }
 
+#progressbar
+{
+    margin-top: 20px;
+    height: 40px;
+}
 
+.progress-bar
+{
+    width: 0%;
+}
