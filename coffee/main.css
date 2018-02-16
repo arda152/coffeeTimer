@@ -1,0 +1,21 @@
+body
+{
+    color: blue;
+}
+
+#display
+{
+    
+}
+
+#coffee
+{
+    width: 50px;
+    display: inline;
+}
+
+#inputForm
+{
+    margin-top: 10px;
+}
+
