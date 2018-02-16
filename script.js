@@ -9,7 +9,7 @@ $(function() {
         setTimeout(function() {
             let counter = setInterval(function(){
             $("#display").html("You need " + parseInt(parseInt($("#coffee").val() * 2) + parseInt(increment * i)) + " grams of water.");
-            if (i == 150)
+            if (i == 120)
             {
                 clearInterval(counter);
             }
