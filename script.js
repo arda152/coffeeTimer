@@ -1,10 +1,11 @@
 $(function () {
+    var timer, counter, i, j;
     $("#submitButton").click(function () {
         if ($("#coffee").val() <= 5) {
             alert("Please enter more than 5 grams");
             return false;
         }
-        
+
         if ($("#coffee").val() >= 150) {
             alert("That is too much coffee!");
             return false;
@@ -12,6 +13,12 @@ $(function () {
         let totalWater = Number($("#coffee").val() * (1000 / 60));
         $("#screen").show();
         $("#timerDisplay").html("00:00");
+        
+        // Clear all timers and reset all counting variables to start again.
+        clearInterval(timer);
+        clearInterval(counter);
+        i = 0;
+        j = 0;
         $("#display").html(parseInt($("#coffee").val() * 2));
         $("#progressbartag").html("Bloom");
         $(".progress").show();
@@ -19,11 +26,9 @@ $(function () {
         totalWater -= parseInt($("#coffee").val() * 2);
         let increment = totalWater / 120;
         console.log(increment);
-        let i = 0;
-        let j = 0;
 
         // The bloom begins, water is 12 percent (two times the ground coffee) and timer begins counting
-        let timer = setInterval(function () {
+        timer = setInterval(function () {
             //Start timer
             $("#timerDisplay").html(doublify(Math.floor((j + 1) / 60)) + ":" + doublify(((j + 1) % 60)));
             j++;
@@ -34,7 +39,7 @@ $(function () {
 
         // The pour begins 30 seconds later
         setTimeout(function () {
-            let counter = setInterval(function () {
+            counter = setInterval(function () {
                 $("#progressbartag").html("Pour");
                 $("#display").html(parseInt($("#coffee").val() * 2 + increment * i));
                 // Bloom is 12% of total water

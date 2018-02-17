@@ -85,7 +85,8 @@ body {
 
 #image
 {
-    float: left
+    float: left;
+    max-width: 400px;
     
 }
 
