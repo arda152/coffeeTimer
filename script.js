@@ -1,7 +1,12 @@
 $(function () {
     $("#submitButton").click(function () {
-        if ($("#coffee").val() <= 0) {
-            alert("Please enter coffee amount!");
+        if ($("#coffee").val() <= 5) {
+            alert("Please enter more than 5 grams");
+            return false;
+        }
+        
+        if ($("#coffee").val() >= 150) {
+            alert("That is too much coffee!");
             return false;
         }
         let totalWater = Number($("#coffee").val() * (1000 / 60));
@@ -16,7 +21,7 @@ $(function () {
         console.log(increment);
         let i = 0;
         let j = 0;
-        
+
         // The bloom begins, water is 12 percent (two times the ground coffee) and timer begins counting
         let timer = setInterval(function () {
             //Start timer
@@ -26,7 +31,7 @@ $(function () {
                 clearInterval(timer);
             }
         }, 1000);
-        
+
         // The pour begins 30 seconds later
         setTimeout(function () {
             let counter = setInterval(function () {
@@ -35,7 +40,7 @@ $(function () {
                 // Bloom is 12% of total water
                 // Map the value of i (0, 120) to percentage (12, 100)
                 $(".progress-bar").css("width", parseInt(12 + (i * (88 / 120))) + "%");
-                
+
                 // Stop brewing after two minutes of pour
                 if (i == 120) {
                     $("#progressbartag").html("Done!");
