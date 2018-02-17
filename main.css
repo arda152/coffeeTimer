@@ -9,7 +9,7 @@ body {
 
 #coffee {
     width: 60px;
-    display: inline;
+    display: inline-block;
 }
 
 .nav-link {
@@ -72,37 +72,27 @@ body {
     color: white;
 }
 
-.container-fluid
-{
+.container-fluid {
     padding: 0px;
 }
 
-.row
-{
+.row {
     padding: 20px;
 }
 
-
-#image
-{
-    float: left;
-    max-width: 400px;
-    
-}
-
-.list-group-item
-{
+.list-group-item {
     background-color: burlywood
 }
 
-.headers
-{
+.headers {
     padding: 20px;
     color: white;
 }
 
-.headersbrown
-{
+#submitButton{
+    color: white;
+}
+.headersbrown {
     padding: 20px;
     color: saddlebrown;
 }
