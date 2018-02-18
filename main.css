@@ -23,12 +23,13 @@ body {
 
 #info {
     height: auto;
-    padding: 60px 10px 10px 10px;
-    color: white;
+    padding-top: 60px;
+    color: hite;
 }
 
-#brand {
-    color: white;
+.card, .list-group
+{
+    margin: 10px 20px;
 }
 
 #timer {
@@ -68,20 +69,14 @@ body {
     display: none;
 }
 
-.card-body {
-    color: white;
-}
 
-.container-fluid {
-    padding: 0px;
-}
 
 .row {
     padding: 20px;
 }
 
 .list-group-item {
-    background-color: burlywood
+    background-color: white;
 }
 
 .headers {
