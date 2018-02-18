@@ -26,7 +26,7 @@ $(function () {
         totalWater -= parseInt($("#coffee").val() * 2);
         let increment = totalWater / 120;
         console.log(increment);
-
+        $("body").scrollTop(150);
         // The bloom begins, water is 12 percent (two times the ground coffee) and timer begins counting
         timer = setInterval(function () {
             //Start timer
