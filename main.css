@@ -27,11 +27,15 @@ body {
     color: hite;
 }
 
-.card, .list-group
+.list-group
 {
     margin: 10px 20px;
 }
 
+#info .card
+{
+    margin-top: 20px;
+}
 #timer {
     height: auto;
     padding: 10px;
