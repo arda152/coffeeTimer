@@ -8,6 +8,7 @@ $(function () {
             scrollTop: ($(document).scrollTop() + offset)
         }, 300);
     });
+
     $("#submitButton").click(function () {
         if ($("#coffee").val() <= 5) {
             alert("Please enter more than 5 grams");
@@ -39,12 +40,12 @@ $(function () {
         // The bloom begins, water is 12 percent (two times the ground coffee) and timer begins counting
         timer = setInterval(function () {
             //Start timer
-            $("#timerDisplay").html(doublify(Math.floor((j + 1) / 60)) + ":" + doublify(((j + 1) % 60)));
-            j++;
+            $("#timerDisplay").html(doublify(Math.floor((j / 60)) + ":" + doublify(j % 60)));
             if (j == 150) {
                 clearInterval(timer);
             }
-        }, 1000);
+            j++;
+        }, 100);
 
         // The pour begins 30 seconds later
         setTimeout(function () {
@@ -53,7 +54,7 @@ $(function () {
                 $("#display").html(parseInt($("#coffee").val() * 2 + increment * i));
                 // Bloom is 12% of total water
                 // Map the value of i (0, 120) to percentage (12, 100)
-                $(".progress-bar").css("width", parseInt(13 + (i * (88 / 120))) + "%");
+                $(".progress-bar").css("width", parseInt(12 + (i * (88 / 120))) + "%");
 
                 // Stop brewing after two minutes of pour
                 if (i == 120) {
@@ -61,8 +62,8 @@ $(function () {
                     clearInterval(counter);
                 }
                 i++;
-            }, 1000);
-        }, 30000);
+            }, 100);
+        }, 2900);
     });
 });
 
