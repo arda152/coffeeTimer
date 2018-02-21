@@ -40,7 +40,7 @@ $(function () {
         // The bloom begins, water is 12 percent (two times the ground coffee) and timer begins counting
         timer = setInterval(function () {
             //Start timer
-            $("#timerDisplay").html(doublify(Math.floor((j / 60)) + ":" + doublify(j % 60)));
+            $("#timerDisplay").html(doublify(Math.floor(j / 60)) + ":" + doublify(j % 60));
             if (j == 150) {
                 clearInterval(timer);
             }
@@ -68,7 +68,7 @@ $(function () {
 });
 
 function doublify(data) {
-    if (data < 10) {
+    if (Number(data) < 10) {
         return "0" + data;
     } else {
         return data;
