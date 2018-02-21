@@ -53,6 +53,9 @@ body {
     height: 60px;
 }
 
+.card-img{
+    margin-top: 20px;
+}
 .progress-bar {
     width: 0%;
     height: 60px;
