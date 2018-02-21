@@ -45,7 +45,7 @@ $(function () {
                 clearInterval(timer);
             }
             j++;
-        }, 100);
+        }, 1000);
 
         // The pour begins 30 seconds later
         setTimeout(function () {
@@ -62,8 +62,8 @@ $(function () {
                     clearInterval(counter);
                 }
                 i++;
-            }, 100);
-        }, 2900);
+            }, 1000);
+        }, 29000);
     });
 });
 
