@@ -1,0 +1,4 @@
+/* Timer controls */
+#timer input[type="text"] {
+    width: 50px;
+}
