@@ -1,4 +1,29 @@
+/* Document Settings */
+.hide {
+    display: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.content ul, ul {
+    margin: 0;
+}
+
 /* Timer controls */
 #timer input[type="text"] {
     width: 50px;
+}
+
+#timer .box {
+    max-width: 300px;
+}
+
+#timerDisplay {
+    width: 150px;
+}
+
+#timerDiv, #formDiv {
+    transition: 400ms;
 }
