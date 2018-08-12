@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>coffeeTimer - better coffee!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css" />
     <script defer src="javascript.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
@@ -14,9 +15,14 @@
 <body class="has-navbar-fixed-top">
     <nav class="navbar is-fixed-top">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#">coffeeTimer</a>
+            <a class="navbar-item" href="#"><span class="icon is-medium"><i class="fas fa-lg fa-coffee"></i></span></a>
+            <a class="has-text-sucess navbar-burger" data-target="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
         </div>
-        <div class="navbar-menu navbar-end">
+        <div id="nav-menu" class="navbar-menu navbar-end">
             <a class="navbar-item" href="#info">
                 About Coffee
             </a>
@@ -29,10 +35,14 @@
         </div>
     </nav>
     <section class="section" id="intro">
-        <h1 class="title is-2">coffeeTimer</h1>
-        <p class="subtitle is-4">
-            This is a JavaScript based timer application that lets you brew the best coffee every time. It is intended to be used with the pour over method.
-        </p>
+        <div class="columns">
+            <div class="column is-12-mobile is-9-tablet is-6-desktop">
+                <h1 class="title is-2">coffeeTimer</h1>
+                <p class="subtitle is-4">
+                    This is a JavaScript based timer application that lets you brew the best coffee every time. It is intended to be used with the pour over method.
+                </p>
+            </div>
+        </div>
     </section>
     <section class="section" id="info">
         <h2 class="title is-2">About Coffee</h2>
@@ -42,21 +52,25 @@
                     Coffee is a plant ( Coffea ) and the name of the drink that is made from this plant. The coffee plant is a bush or tree that can grow up to ten meters (about 32 feet) high, but is usually cut shorter. Coffee plants originally grew in Africa , and now
                     also grow in South America , Central America and Southeast Asia . They are an important crop for the economies of many countries. The drink is made from the seeds of the coffee plant, called coffee beans. Coffee is usually served hot,
                     and is a popular drink in many countries. Coffee contains a chemical called caffeine, a mild drug that keeps people awake.
-                    <a href="https://simple.wikipedia.org/wiki/Coffee">Learn more</a>
+                    <a href="https://simple.wikipedia.org/wiki/Coffee">Keep reading on Wikipedia</a>
                 </div>
             </div>
         </div>
     </section>
     <section class="section" id="brewing">
-        <div class="content">
-            <h2 class="title is-2">About Brewing</h2>
-            <ul class="list">
-                <li>The best coffee is made from the best beans. Make sure the roast date is not older than a month.</li>
-                <li>Grind your beans to your preferred setting. Usually filter coffee is the middle range on the grinder.</li>
-                <li>Wet your filter and place the ground coffee in it.</li>
-                <li>Then comes the bloom. The grounds get soaked and the CO2 leaks out. This process takes around half a minute and results in a more balanced cup.</li>
-                <li>After the bloom, you can pour the water continuously for 2-3 minutes, until you reach the desired amount.</li>
-            </ul>
+        <div class="columns">
+            <div class="column is-12-mobile is-9-tablet is-6-desktop">
+                <div class="content is-medium">
+                    <h2 class="title is-2">About Brewing</h2>
+                    <ul class="list">
+                        <li><span class="icon is-medium"><i class="fas fa-leaf"></i></span>The best coffee is made from the best beans. Make sure the roast date is not older than a month.</li>
+                        <li><span class="icon is-medium"><i class="fas fa-cogs"></i></span>Grind your beans to your preferred setting. Usually filter coffee is the middle range on the grinder.</li>
+                        <li><span class="icon is-medium"><i class="fas fa-filter"></i></span>Wet your filter and place the ground coffee in it.</li>
+                        <li><span class="icon is-medium"><i class="fas fa-clock"></i></span>Then comes the bloom. The grounds get soaked and the CO2 leaks out. This process takes around half a minute and results in a more balanced cup.</li>
+                        <li><span class="icon is-medium"><i class="fas fa-fill-drip"></i></span>After the bloom, you can pour the water continuously for 2-3 minutes, until you reach the desired amount.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
     <section class="section" id="timer">
@@ -64,15 +78,17 @@
         <div class="columns">
             <div id="timerDiv" class="hide column is-6">
                 <progress id="progressBar" class="progress" value="15" max="180"></progress>
-                <div class="is-size-3 box has-text-weight-light">
-                    <div class="is-size-3 has-text-weight-semibold" id="timerMessage">
-                        Bloom
+                <div class="is-size-4 box has-text-weight-light">
+                    <span class="is-size-3 has-text-weight-semibold" id="timerMessage">
+                         Bloom
+                    </span>
+                    <span class="is-size-2  has-text-centered" id="timerDisplay">
+                        00:00
+                    </span>
+                    <div>
+                        Match your scale to:
+                        <span class="is-size-1" id="pourGramsOfWater">13</span>g of water
                     </div>
-                    Match your scale to:
-                    <span class="is-size-1" id="pourGramsOfWater">13</span>g of water
-                </div>
-                <div class="is-size-2 box has-text-centered" id="timerDisplay">
-                    00:00
                 </div>
             </div>
             <div id="formDiv" class="column is-6">
@@ -81,6 +97,8 @@
                         <p class="is-size-4">
                             I want to brew
                         </p>
+                    </div>
+                    <div class="fielad">
                         <div class="control">
                             <input id="gramsOfCoffeeInput" class="input" type="text" placeholder="11" />
                         </div>

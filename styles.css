@@ -27,3 +27,8 @@ li {
 #timerDiv, #formDiv {
     transition: 400ms;
 }
+
+/* Form Controls */
+#startBrewingButton {
+    margin-top: 10px;
+}

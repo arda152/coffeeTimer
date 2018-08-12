@@ -1,4 +1,8 @@
 // Store DOM elements
+// Navbar
+var burger = document.querySelector(".navbar-burger");
+var menu = document.querySelector(".navbar-menu");
+
 // Form
 var formDiv = document.getElementById("formDiv");
 var gramsInput = document.getElementById("gramsOfCoffeeInput");
@@ -12,6 +16,13 @@ var message = document.getElementById("timerMessage");
 var gramsDisplay = document.getElementById("pourGramsOfWater");
 var timerDisplay = document.getElementById("timerDisplay");
 
+// Burger menu expands the hidden navbar items
+burger.addEventListener("click", function() {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
+
+// App runs when button is clicked
 button.addEventListener("click", function(e) {
     e.preventDefault();
 
@@ -20,29 +31,46 @@ button.addEventListener("click", function(e) {
         helperText.textContent = "Please enter a number";
         deleteFocus(gramsInput);
         return false;
+    } else if (Number(gramsInput.value) > 80) {
+        helperText.textContent = "Please use less than 80 grams";
+        deleteFocus(gramsInput);
+        return false;
     } else if (Number(gramsInput.value) <= 5) {
-        helperText.textContent = "Brew with at least 6 grams";
+        helperText.textContent = "Please use more than 5 grams";
         deleteFocus(gramsInput);
         return false;
     }
+
     // Setup for timer
+    // Clear error message, calculate total water
     helperText.textContent = "";
     var totalWater = Number(gramsInput.value) * 16.66;
+
+    // The bloom is the initial pour
     var bloom = Number(gramsInput.value) * 2;
+    // The pour is the rest of the water
     var pour = totalWater - bloom;
+
     // Grams of water to pour every second
+    // 150 is used instead of 180, because the actual pour is 150 seconds long
     var increment = pour / 150;
     // Clear and toggle the display
     gramsInput.value = "";
-    // Progress is mapped using 180 seconds, bloom fixes to 30 seconds
+
+    // Progress bar is mapped using the 180 seconds model
     gramsDisplay.textContent = Math.round(bloom);
-    progressBar.value = 30;
+    progress.value = 30;
+    progress.classList.remove("is-success");
+
+    // Change from form display to timer display
     toggleDisplays();
+
     // This will count seconds
     var counter = 0;
+
     // Start timer
     // Display stays at bloom value for half a minute
-    // When pour begins, the timer increments progress bar and displayed g's of water
+    // When pour begins, the timer increments progress bar and displayed grams of water
     // At 180 seconds, the timer stops and resets
     var interval = setInterval(function() {
         counter++;
@@ -51,15 +79,19 @@ button.addEventListener("click", function(e) {
         if (counter > 30) {
             if (timerMessage.textContent != "Brew") {
                 timerMessage.textContent = "Brew";
+                progress.classList.add("is-link");
             }
 
             // Set display divs to show updated values every second
             gramsDisplay.textContent = bloom + Math.round((counter - 30) * increment);
-            progressBar.value++;
+            progress.value++;
         }
         timerDisplay.textContent = secondsToMmSsString(counter);
         if (counter === 180) {
+            // Stop timer and show resetting state
             clearInterval(interval);
+            progress.classList.remove("is-link");
+            progress.classList.add("is-success");
             timerMessage.textContent = "Enjoy! Resetting..."
             // Wait for three seconds and toggle
             setTimeout(function() {
@@ -67,7 +99,7 @@ button.addEventListener("click", function(e) {
                 toggleDisplays();
             }, 3000);
         }
-    }, 300);
+    }, 1000);
 
 });
 
